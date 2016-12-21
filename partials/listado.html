@@ -1,0 +1,62 @@
+<form>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Correo" ng-model="Correo" ng-required="true">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Nombre" ng-model="Nombre" ng-required="true">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Apellido" ng-model="Apellido" ng-required="true">
+    </div>
+    <div class="form-group">
+        <select name="Sexo" class="form-control">
+            <option value="1">Hombre</option>
+            <option value="2">Mujer</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Sueldo" ng-model="Sueldo" ng-required="true">
+    </div>
+    <div class="form-group">
+        <select name="Profesion_id" class="form-control">
+
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="FechaNacimiento" ng-model="FechaNacimiento" ng-required="true">
+    </div>
+    <button type="submit" class="btn btn-default btn-block">Agregar</button>
+</form>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Listado de Empleados
+  </div>
+  <table class="table">
+    <thead>
+        <th>Correo</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Sexo</th>
+        <th>Sueldo</th>
+        <th>Profesion</th>
+        <th>Fecha de Nacimiento</th>
+        <th></th>
+    </thead>
+      <tr ng-repeat="empleado in empleados">
+          <td>{{empleado.Correo}}</td>
+          <td>{{empleado.Nombre}}</td>
+          <td>{{empleado.Apellido}}</td>
+          <td ng-if="empleado.Sexo == 1">Hombre</td>
+          <td ng-if="empleado.Sexo == 2">Mujer</td>
+          <td>{{empleado.Sueldo}}</td>
+          <td>{{empleado.Profesion}}</td>
+          <td>{{empleado.FechaNacimiento}}</td>
+          <td>
+            <button class="btn btn-default btn-xs" type="button" name="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+            <button class="btn btn-default btn-xs" type="button" name="button"><i class="glyphicon glyphicon-trash"></i></button>
+          </td>
+      </tr>
+  </table>
+</div>
