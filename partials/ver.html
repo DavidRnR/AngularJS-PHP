@@ -6,17 +6,18 @@
 
 <dl>
     <dt>Nombre</dt>
-    <dd>{{ Nombre }}</dd>
+    <dd>{{empleado.Nombre}}</dd>
     <dt>Apellido</dt>
-    <dd>{{ Apellido }}</dd>
+    <dd>{{empleado.Apellido }}</dd>
     <dt>Sexo</dt>
-    <dd>{{ Sexo }}</dd>
+      <dd ng-if="empleado.Sexo == 1">Hombre</dd>
+      <dd ng-if="empleado.Sexo == 2">Mujer</dd>
     <dt>Sueldo</dt>
-    <dd>{{ Sueldo }}</dd>
+    <dd>{{empleado.Sueldo }}</dd>
     <dt>Profesion</dt>
-    <dd>{{ Profesion }}</dd>
+    <dd>{{empleado.Profesion }}</dd>
     <dt>Fecha Nacimiento</dt>
-    <dd>{{ FechaNacimiento }}</dd>
+    <dd>{{empleado.FechaNacimiento }}</dd>
     <dt>Fecha Registro</dt>
-    <dd>{{ FechaRegistro }}</dd>
+    <dd>{{empleado.FechaRegistro }}</dd>
 </dl>

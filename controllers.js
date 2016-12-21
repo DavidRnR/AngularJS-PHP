@@ -9,13 +9,25 @@ empleadoControllers.controller('EmpleadoListadoCtrl', ['$scope','$http', functio
   empleados();
 
   function profesiones() {
-    $http.get('http://localhost/proyectos/AngularJS-PHP/?a=profesiones').then(function (r) {
+    $http.get('http://localhost/proyectos/AngularJS-PHP/api/?a=profesiones').then(function (r) {
       $scope.profesiones = r.data;
     });
   }
-  profesiones();
+
+  $scope.eliminar = function (id) {
+    console.log(id);
+    $http.get('http://localhost/proyectos/AngularJS-PHP/api/?a=eliminar&id='+id).then(function () {
+      empleados();
+    });
+  }
+
 }]);
 
-empleadoControllers.controller('EmpleadoVerCtrl', ['$scope', '$routeParams', '$location', function ($scope, $routeParams, $location) {
-
+empleadoControllers.controller('EmpleadoVerCtrl', ['$scope', '$routeParams', '$location', '$http', function ($scope, $routeParams, $location,$http) {
+  function empleado() {
+    $http.get('http://localhost/proyectos/AngularJS-PHP/api/?a=obtener&id='+$routeParams.id).then(function (r) {
+      $scope.empleado = r.data;
+    });
+  }
+  empleado();
 }]);

@@ -54,8 +54,8 @@
           <td>{{empleado.Profesion}}</td>
           <td>{{empleado.FechaNacimiento}}</td>
           <td>
-            <button class="btn btn-default btn-xs" type="button" name="button"><i class="glyphicon glyphicon-eye-open"></i></button>
-            <button class="btn btn-default btn-xs" type="button" name="button"><i class="glyphicon glyphicon-trash"></i></button>
+            <a class="btn btn-default btn-xs" href="#/ver/{{empleado.id}}"><i class="glyphicon glyphicon-eye-open"></i></a>
+            <button class="btn btn-xs btn-danger" type="button" ng-click="eliminar(empleado.id)"><i class="glyphicon glyphicon-trash"></i></button>
           </td>
       </tr>
   </table>
