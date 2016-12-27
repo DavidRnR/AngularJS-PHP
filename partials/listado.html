@@ -1,4 +1,4 @@
-<form>
+<form ng-submit="registrar()">
     <div class="form-group">
         <input type="text" class="form-control" placeholder="Correo" ng-model="Correo" ng-required="true">
     </div>
@@ -9,7 +9,7 @@
         <input type="text" class="form-control" placeholder="Apellido" ng-model="Apellido" ng-required="true">
     </div>
     <div class="form-group">
-        <select name="Sexo" class="form-control">
+        <select ng-model="Sexo" class="form-control">
             <option value="1">Hombre</option>
             <option value="2">Mujer</option>
         </select>
@@ -18,8 +18,8 @@
         <input type="text" class="form-control" placeholder="Sueldo" ng-model="Sueldo" ng-required="true">
     </div>
     <div class="form-group">
-        <select name="Profesion_id" class="form-control">
-
+        <select ng-model="Profesion_id" class="form-control">
+            <option ng-repeat="profesion in profesiones" value="{{profesion.id}}">{{profesion.Nombre}}</option>
         </select>
     </div>
     <div class="form-group">
